@@ -1,0 +1,33 @@
+:root {
+  --fondo: #f4f7f5;
+  --superficie: #ffffff;
+  --texto: #18322b;
+  --texto-suave: #5e7069;
+  --primario: #19745b;
+  --primario-oscuro: #105443;
+  --acento: #e5b95c;
+  --sombra: 0 18px 45px rgba(24, 50, 43, 0.12);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: linear-gradient(135deg, #f4f7f5 0%, #e7f1ed 100%); color: var(--texto); font-family: Georgia, 'Times New Roman', serif; line-height: 1.6; min-height: 100vh; }
+.encabezado { background: var(--primario-oscuro); color: #fff; padding: 2.5rem 1.25rem 1.75rem; text-align: center; }
+.encabezado h1 { margin: 0 0 .35rem; font-size: clamp(2rem, 5vw, 3.4rem); }
+.encabezado p { color: #d7ebe3; margin: 0; }
+.navegacion { align-items: center; background: rgba(16, 84, 67, .97); display: flex; flex-wrap: wrap; gap: .45rem; justify-content: center; padding: .8rem 1rem; position: sticky; top: 0; z-index: 10; }
+.navegacion a, .boton { border: 0; border-radius: 999px; color: #fff; cursor: pointer; font: 600 .95rem Georgia, 'Times New Roman', serif; padding: .55rem .9rem; text-decoration: none; transition: background .2s ease, transform .2s ease; }
+.navegacion a:hover, .navegacion a.activo, .boton:hover { background: var(--primario); transform: translateY(-2px); }
+.boton { background: var(--acento); color: var(--texto); margin-left: .5rem; }
+.contenedor { margin: 0 auto; max-width: 920px; padding: 3.5rem 1.25rem; }
+.tarjeta { background: var(--superficie); border-radius: 18px; box-shadow: var(--sombra); padding: clamp(1.4rem, 4vw, 2.7rem); }
+h2 { color: var(--primario-oscuro); margin-top: 0; }
+ul { padding-left: 1.25rem; }
+li { margin: .75rem 0; }
+.pie { color: var(--texto-suave); padding: 0 1.25rem 2rem; text-align: center; }
+body.modo-noche { --fondo: #15221e; --superficie: #20332c; --texto: #edf5f1; --texto-suave: #bfd0c8; --sombra: 0 18px 45px rgba(0, 0, 0, .25); background: var(--fondo); }
+body.modo-noche .tarjeta { background: var(--superficie); }
+body.modo-noche h2 { color: #a8ddc8; }
+.aparecer { animation: aparecer .65s ease both; }
+@keyframes aparecer { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 620px) { .navegacion a { font-size: .85rem; padding: .45rem .65rem; } .boton { margin-left: 0; } }
